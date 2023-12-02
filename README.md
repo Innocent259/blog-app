@@ -85,13 +85,13 @@ In order to run this project you need:
 Clone this repository to your desired folder:
 
 ```bash
-  git https://github.com/Innocent259/bloggie.git
+  git https://github.com/Innocent259/blog-app.git
 ```
 
 You need to setup database for these project
 
 ```
-  development = bloggie_app_dev
+  development = bloggApp_app_development
   test        = bloggie_app_test
   production  = Bloggie_app_production
 ```
@@ -128,7 +128,7 @@ production:
 Install this project with:
 
 ```bash
-  cd Blog_app_with_rails
+  cd Blog-app
   bundle install
 ```
 
