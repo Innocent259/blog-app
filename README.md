@@ -56,6 +56,7 @@
 - **Validations and Model specs.**
 - **Processing data in models.**
 - **Controllers.**
+- **Controllers specs.**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -176,7 +177,7 @@ it will run the all the unit test of these project
 <!-- FUTURE FEATURES -->
 
 ## 🔭 Future Features <a name="future-features"></a>
-- **Controllers specs.**
+
 - **Views.**
 - **Forms.**
 - **Integration specs for Views and fixing n+1 problems.**
