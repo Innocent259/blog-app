@@ -53,6 +53,9 @@
 ### Key Features <a name="key-features"></a>
 
 - **Create models**
+- **Validations and Model specs.**
+- **Processing data in models.**
+- **Controllers.**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -173,10 +176,6 @@ it will run the all the unit test of these project
 <!-- FUTURE FEATURES -->
 
 ## 🔭 Future Features <a name="future-features"></a>
-
-- **Validations and Model specs.**
-- **Processing data in models.**
-- **Controllers.**
 - **Controllers specs.**
 - **Views.**
 - **Forms.**
