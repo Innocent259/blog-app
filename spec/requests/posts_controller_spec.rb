@@ -2,7 +2,7 @@ RSpec.describe 'Posts', type: :request do
   describe 'GET /index' do
     it 'returns a success response' do
       get '/users/:id/posts'
-      expect(response). to be_successful
+      expect(response).to be_successful
     end
 
     it 'renders the correct template' do
