@@ -1,0 +1,9 @@
+<% @users.each do |user| %>
+    <div class="user-container">
+        <img class="user-img" src="<%= user.photo %>" alt="User photo">
+        <div class="user-post">
+          <a class="username" href="<%= user_path(user.id) %>"><%= user.name %></a>
+          <p class="user-posts">Number of posts: <%= user.posts.count %></p>
+        </div>  
+    </div>
+<% end %>
