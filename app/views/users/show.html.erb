@@ -6,22 +6,22 @@
 </div>
 
 <% @posts.each do |post| %>
-<div>
-    <div>
-        <a href="<%= user_post_path(post.author_id,post.id) %>">
-            <h2><%= post.title %></h2>
-            <p><%= post.text %><p>
-            <div>
-                <span>Comments: <%= post.comments.count %></span>
-                <span>Likes: <%= post.likes.count %></span>
+    <div class="posts">
+        <a href="<%= user_post_path(post.author_id,post.id) %>" class="post-details">
+            <h2 class="post-id">Post #<%= post.id %></h2>
+            <div class="posts-reactions">
+                <p class="posts-text"><%= post.text %><p>
+                <div class="reactions">
+                    <span>Comments: <%= post.comments.count %></span>
+                    <span>Likes: <%= post.likes.count %></span>
+                </div>
             </div>
         </a>
     </div>
-</div>
 <% end %>
 <% unless @users[0].posts.length <=3 %>
-<button>
-    <a href="<%= user_posts_path(@users[0])%>">See all posts</a>
+<button class="button">
+    <a href="<%= user_posts_path(@users[0])%>" class="button-content">See all posts</a>
 </button>
 <%end %>
 </div>
