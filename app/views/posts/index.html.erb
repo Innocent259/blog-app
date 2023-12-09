@@ -1,1 +1,29 @@
-<h2>User posts</h2>
+<div class="home">
+    <%= render partial: "users/user", users: @users%>
+
+<% @posts.each do |post| %>
+<ul class="posts-list">
+  <li>
+    <a href="<%= user_post_path(post.author_id, post.id) %>" class="">
+      <h2 class=""><%= post.title %></h2>
+      <p><%= post.text %></p>
+      <div>
+        <p>Comments: <%= post.comments.length %></p>
+        <p>Likes: <%= post.likes.length %></p>
+      </div>
+    </a>
+  </li>
+</ul>
+<ul>
+  <% unless post.comments.any? %>
+    <h2>There are no comments to show.</h2>
+  <% end %>
+  <% post.recent_five_comments.each do |comment| %>
+    <li class="">
+      <p><%= User.find(comment.user_id).name %>:</p>
+      <p><%= comment.text %></p>
+    </li>
+  <% end %>
+</ul>
+<% end %>
+</div>
