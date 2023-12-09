@@ -111,3 +111,20 @@ body {
 .list {
   list-style: none;
 }
+
+.comments {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 8px;
+}
+
+.text-area {
+  color: #fff;
+}
+
+.posts-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
