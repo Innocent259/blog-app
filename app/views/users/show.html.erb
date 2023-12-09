@@ -1,1 +1,27 @@
-<h2>Show a user</h2>
+<div class="home">
+<%= render partial: "user", users: @users%>
+<div class="bio-container">
+    <h2 class="bio">Bio</h2>
+    <p><%= @users[0].bio %></p>
+</div>
+
+<% @posts.each do |post| %>
+    <div class="posts">
+        <a href="<%= user_post_path(post.author_id,post.id) %>" class="post-details">
+            <h2 class="post-id">Post #<%= post.id %></h2>
+            <div class="posts-reactions">
+                <p class="posts-text"><%= post.text %><p>
+                <div class="reactions">
+                    <span>Comments: <%= post.comments.count %></span>
+                    <span>Likes: <%= post.likes.count %></span>
+                </div>
+            </div>
+        </a>
+    </div>
+<% end %>
+<% unless @users[0].posts.length <=3 %>
+<button class="button">
+    <a href="<%= user_posts_path(@users[0])%>" class="button-content">See all posts</a>
+</button>
+<%end %>
+</div>

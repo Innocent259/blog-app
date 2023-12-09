@@ -1,1 +1,31 @@
-<h2>Single post</h2>
+<div class="home">
+    <% @posts.each do |post| %>
+    <ul>
+    <li class="list">
+        <a href="<%= user_post_path(post.author_id, post.id) %>" class="post-details">
+            <div class="posts-reactions">
+                <h2 class="post-id">Post by #<%= User.find(post.author_id).name %></h2>
+                <div class="reactions">
+                    <span>Comments: <%= post.comments.count %></span>
+                    <span>Likes: <%= post.likes.count %></span>
+                </div>
+            </div>
+            
+            <p><%= post.text %></p>
+        </a>
+        </li>
+        </ul>
+
+        <ul>
+        <% unless post.comments.any? %>
+            <h2>There are no comments to show.</h2>
+        <% end %>
+        <% post.comments.each do |comment| %>
+            <li class="comment-details" >
+            <span><%= User.find(comment.user_id).name %>:</span>
+            <span><%= comment.text %></span>
+            </li>
+        <% end %>
+        </ul>
+    <% end %>
+</div>
