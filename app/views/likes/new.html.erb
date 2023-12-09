@@ -1,0 +1,5 @@
+<h1 class="text-base font-bold">Like post</h1>
+
+<%= form_with model: @like, url: user_post_likes_path do |f| %>
+  <button class="button-content"><%= f.submit "Like" %></button>
+<% end %>
