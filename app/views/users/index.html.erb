@@ -1,4 +1,7 @@
-    <% @users.each do |user| %>
-        <img src=<%= user.photo %> >
-        <h3><%= user.name %></h3>
-    <% end %>
+<% if @users.empty? %>
+  <h3>No user found</h3>
+<% end %>
+
+<div class="home">
+    <%= render partial: 'user', users: @users %> 
+</div>
