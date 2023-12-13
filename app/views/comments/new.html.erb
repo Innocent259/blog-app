@@ -1,4 +1,5 @@
-<h1 class="text-base font-bold">Create a New Comment</h1>
+<div class="home">
+  <h1 class="text-base font-bold">Create a New Comment</h1>
 
 <%= form_with model: @comment, url: user_post_comments_path do |f| %>
   <div class="comments">
@@ -10,3 +11,5 @@
     <%= f.submit 'Create Comment' %>
   </button>
 <% end %>
+</div>
+
