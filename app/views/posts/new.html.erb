@@ -1,10 +1,14 @@
-<h1>Add new Post</h1>
-<%= form_with model: @post, url: user_posts_path do |f| %>
-   <div class="posts-form">
-    <%= f.label :title, "Title" %>
-    <div class="text-area><%= f.text_field :title %></div>
-    <%= f.label :text, "Post" %>
-    <div class="text-area"><%= f.text_area :text %></div>
-    <button class="button-content"><%= f.submit "Add Post"%></div>
+<div class="home">
+    <h1>Add new Post</h1>
+    <%= form_with model: @post, url: user_posts_path do |form| %>
+    <div class="posts-form">
+        <%= form.label :title, "Title" %>
+        <div class="text-area"><%= form.text_field :title %></div>
+        <%= form.label :text, "Post" %>
+        <div class="text-area"><%= form.text_area :text %></div>
+        <button class="button-content">
+            <%= form.submit :Post %>
+        </button>
     </div>
-<% end %>
+    <% end %>
+</div>
