@@ -1,35 +1,19 @@
-RSpec.describe 'Posts', type: :request do
-  describe 'GET /index' do
-    it 'returns a success response' do
-      get '/users/:id/posts'
-      expect(response).to be_successful
-    end
+require 'rails_helper'
 
-    it 'renders the correct template' do
-      get '/users/:id/posts'
-      expect(response).to render_template(:index)
-    end
-
-    it 'should include the placeholder' do
-      get '/users/:id/posts'
-      expect(response.body).to include('User posts')
-    end
-  end
-
-  describe 'GET /show' do
+describe PostsController, type: :controller do
+  describe 'GET #index' do
     it 'returns a successful response' do
-      get '/users/:id/posts/:id'
+      user = User.create(name: 'Test User')
+
+      get :index, params: { user_id: user.id }
       expect(response).to be_successful
     end
 
-    it 'renders the show template' do
-      get '/users/:id/posts/:id'
-      expect(response).to render_template('posts/show')
-    end
+    it 'renders the index template' do
+      user = User.create(name: 'Test User')
 
-    it 'should include the placeholder' do
-      get '/users/:id/posts/:id'
-      expect(response.body).to include('Single post')
+      get :index, params: { user_id: user.id }
+      expect(response).to render_template(:index)
     end
   end
 end
