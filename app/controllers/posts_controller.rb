@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   def index
     @users = [User.includes(:posts).find(params[:user_id])]
     @posts = @users[0].posts.includes(:comments)
-	end
+  end
 
   def new
     @post = Post.new

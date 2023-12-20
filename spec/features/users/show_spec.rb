@@ -29,13 +29,3 @@ RSpec.describe 'users#show', type: :feature do
     expect(page).to have_current_path(user_posts_path(@user))
   end
 end
-
-
-
-
-
-
-
-
-
-
