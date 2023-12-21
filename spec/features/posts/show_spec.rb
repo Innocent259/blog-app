@@ -13,6 +13,7 @@ RSpec.describe 'posts#show', type: :feature do
   it 'displays the post details' do
     expect(page).to have_content(@post.title)
     expect(page).to have_content(@post.text)
+    expect(page).to have_content(@user.name)
     expect(page).to have_content('Comments: 5')
     expect(page).to have_content('Likes: 0')
   end
