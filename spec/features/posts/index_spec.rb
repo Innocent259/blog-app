@@ -71,4 +71,9 @@ RSpec.describe 'User post index page', type: :feature do
   it 'displays a section for pagination if there are more posts than fit on the view' do
     expect(page).to have_content('Pagination')
   end
+
+  it 'When I click on a post, it redirects me to that post show page.' do
+    click_link(@posts.first.text)
+    expect(current_path).to match user_post_path(@user, @posts.first)
+  end
 end
