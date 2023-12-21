@@ -173,6 +173,12 @@ it will run the all the unit test of these project
 - Twitter: [@innocentndahimana](https://www.linkedin.com/in/innocent259/)
 - LinkedIn: [@innocentndahimana](https://twitter.com/ndahimana259)
 
+￼👤 **iwu John chinonso**
+
+- GitHub: [@githubhandle](https://github.com/maths29)
+- Twitter: [@twitterhandle](https://twitter.com/maths29)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/iwu-john-b92b01148/)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- FUTURE FEATURES -->
