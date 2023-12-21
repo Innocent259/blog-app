@@ -1,7 +1,9 @@
 class PostsController < ApplicationController
   def index
-    @users = [User.includes(:posts).find(params[:user_id])]
-    @posts = @users[0].posts.includes(:comments)
+    @users = User.includes(posts: [:comments, :likes]).where(id: params[:user_id])
+    @posts = @users.flat_map(&:posts)
+    @comment = Comment.new
+    @like = Like.new
   end
 
   def new
