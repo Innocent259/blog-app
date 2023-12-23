@@ -58,6 +58,10 @@
 - **Controllers.**
 - **Controllers specs.**
 - **Views.**
+- **Forms.**
+- **Integration specs for Views and fixing n+1 problems.**
+- **Add Devise.**
+- **Add authorization rules.**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -185,10 +189,6 @@ it will run the all the unit test of these project
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- **Forms.**
-- **Integration specs for Views and fixing n+1 problems.**
-- **Add Devise.**
-- **Add authorization rules.**
 - **Add API endpoints.**
 - **API documentation.**
 
