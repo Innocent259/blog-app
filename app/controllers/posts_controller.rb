@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  load_and_authorize_resource
   def index
     @users = User.includes(posts: %i[comments likes]).where(id: params[:user_id])
     @posts = @users.flat_map(&:posts)
@@ -25,5 +26,19 @@ class PostsController < ApplicationController
 
   def show
     @posts = [Post.find(params[:id])]
+    @user = @posts[0].author
+    @comment = Comment.new
+    @like = Like.new
+  end
+
+  def destroy
+    @post = Post.find(params[:id])
+    authorize! :destroy, @post
+    if @post.destroy
+      flash.now[:success] = 'Post was successfully destroyed!'
+    else
+      flash[:error] = 'Post couldnt be destroyed!'
+    end
+    redirect_to user_posts_path
   end
 end
