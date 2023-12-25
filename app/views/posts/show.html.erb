@@ -5,6 +5,9 @@
         <a href="<%= user_post_path(post.author_id, post.id) %>" class="post-details">
             <div class="posts-reactions">
                 <h2 class="post-id">Post by #<%= User.find(post.author_id).name %></h2>
+                <% if @post && can?(:destroy, @post) %>
+                    <%= button_to "Delete Post", user_post_path(user_id: @user.id, id: @post.id), method: :delete, class: "delete-btn" %>
+                <% end %>
                 <div class="reactions">
                     <span>Comments: <%= post.comments.count %></span>
                     <span>Likes: <%= post.likes.count %></span>
@@ -22,8 +25,11 @@
         <% end %>
         <% post.comments.each do |comment| %>
             <li class="comment-details" >
-            <span><%= User.find(comment.user_id).name %>:</span>
-            <span><%= comment.text %></span>
+                <span><%= User.find(comment.user_id).name %>:</span>
+                <span><%= comment.text %></span>
+                <% if can? :destroy, comment %>
+                    <%= button_to "Delete Comment", user_post_comment_path(user_id: @user.id, post_id: post.id, id: comment.id), method: :delete,  class: 'delete-comment-btn' %>
+                <% end %>
             </li>
         <% end %>
         </ul>
